@@ -80,39 +80,12 @@ form {
   .page-heading {
     @apply flex flex-col items-center gap-8 max-w-4xl text-center;
   }
-
   .resumes-section {
-    @apply flex flex-wrap gap-6 items-start w-full max-w-[1850px] justify-evenly;
-
-    /* Stack cards vertically on mobile/tablet and center them */
-    @media (max-width: 1023px) {
-      @apply flex-col items-center px-4;
-    }
+    @apply flex flex-wrap max-lg:flex-col gap-6 items-start  w-full max-w-[1850px] justify-evenly;
   }
 
   .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-full bg-white rounded-2xl p-4;
-
-    /* Desktop sizes */
-    @media (min-width: 1024px) {
-      width: 450px;
-    }
-
-    @media (min-width: 1280px) {
-      width: 490px;
-    }
-
-    /* Mobile and tablet - ensure full width with proper padding */
-    @media (max-width: 1023px) {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Small mobile */
-    @media (max-width: 640px) {
-      max-width: 100%;
-      min-width: 320px;
-    }
+    @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-4;
   }
 
   .resume-card-header {
