@@ -7,20 +7,47 @@ export interface PdfConversionResult {
 let pdfjsLib: any = null;
 let isLoading = false;
 let loadPromise: Promise<any> | null = null;
+let pdfWorker: Worker | null = null;
 
 async function loadPdfJs(): Promise<any> {
     if (pdfjsLib) return pdfjsLib;
     if (loadPromise) return loadPromise;
 
+    if (typeof window === "undefined") {
+        throw new Error("PDF.js can only be loaded in the browser");
+    }
+
     isLoading = true;
-    // @ts-expect-error - pdfjs-dist/build/pdf.mjs is not a module
-    loadPromise = import("pdfjs-dist/build/pdf.mjs").then((lib) => {
-        // Set the worker source to use local file
-        lib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
-        pdfjsLib = lib;
-        isLoading = false;
-        return lib;
-    });
+    // // @ts-expect-error - pdfjs-dist/build/pdf.mjs is not a module
+    // loadPromise = import("pdfjs-dist/build/pdf.mjs").then((lib) => {
+    //     // Set the worker source to use local file
+    //     lib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+    //     pdfjsLib = lib;
+    //     isLoading = false;
+    //     return lib;
+    // });
+
+    loadPromise = import("pdfjs-dist/build/pdf.mjs")
+        .then(async (lib) => {
+            if (!pdfWorker) {
+                const workerUrl = new URL(
+                    "pdfjs-dist/build/pdf.worker.min.mjs",
+                    import.meta.url
+                );
+                pdfWorker = new Worker(workerUrl, { type: "module" });
+            }
+
+            lib.GlobalWorkerOptions.workerPort = pdfWorker;
+            pdfjsLib = lib;
+            isLoading = false;
+            return lib;
+        })
+        .catch((error) => {
+            isLoading = false;
+            loadPromise = null;
+            throw error;
+        });
+
 
     return loadPromise;
 }
