@@ -1,4 +1,11 @@
+import {type ClassValue, clsx} from "clsx";
+import {twMerge} from "tailwind-merge";
+
 const hasGlobalCrypto = typeof globalThis !== "undefined" && !!globalThis.crypto;
+
+export function cn(...inputs:ClassValue[]){
+    return twMerge(clsx(inputs))
+}
 
 const getCrypto = (): Crypto | null => {
     if (hasGlobalCrypto) {
