@@ -1,87 +1,61 @@
-# Welcome to React Router!
+# 📌 AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+An AI-powered web application that evaluates résumés against specific job descriptions and provides targeted, actionable feedback to improve job alignment, skills presentation, and ATS compatibility.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+![Status](https://img.shields.io/badge/Status-Active-green)
+![Tech](https://img.shields.io/badge/Frontend-React-blue)
+![Tailwind CSS](https://img.shields.io/badge/Style-TailwindCSS-38BDF8)
+![Puter](https://img.shields.io/badge/AI-Puter-black)
 
 ---
 
-Built with ❤️ using React Router.
+## 🔥 Overview
+
+**AI Resume Analyzer** helps job seekers tailor their résumés to specific roles by analyzing both the résumé and job description using AI. It provides scored evaluations, missing skills, tone/style improvements, and structural enhancements to increase interview readiness.
+
+This tool is built for students, job seekers, freelancers, and professionals who apply to multiple roles and need quick, targeted refinements.
+
+---
+
+## ✨ Key Features
+
+- 📎 Upload résumé + paste job description
+- 🤖 AI-based semantic analysis using **Puter**
+- 📊 Category-based scoring:
+    - Tone & Style
+    - Content Quality
+    - Structure & Formatting
+    - Skills & Keyword Match
+- 🔍 ATS-friendly optimization
+- 🧩 Missing skills & keyword detection
+- 🗒 Actionable improvement suggestions
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js & npm installed
+- Access to Puter API or model
+
+```shell
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+npm install
+
+```
+
+```shell
+npm start
+```
+
+## 📸 Screenshots
+
+![img.png](img.png)
+
+![img_1.png](img_1.png)
+
+![img_2.png](img_2.png)
+
+
