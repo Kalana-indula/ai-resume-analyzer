@@ -17,6 +17,24 @@ This tool is built for students, job seekers, freelancers, and professionals who
 
 ---
 
+## 🧭 Introduction
+
+AI Resume Analyzer is a modern, client-focused web app that compares a résumé to a specific job description and returns clear, actionable feedback to improve alignment and ATS compatibility. The goal is to help applicants quickly identify gaps, refine wording, and present skills more effectively for the role they want.
+
+### 🧰 Technologies Used
+
+- **React** for the component-based UI
+- **TypeScript** for type-safe front-end development
+- **Vite** for fast local development and optimized builds
+- **Tailwind CSS** for utility-first styling
+- **Puter** for AI-powered analysis of résumé and job description content
+
+### 🤖 What is Puter?
+
+**Puter** is an AI platform that provides accessible, hosted models and APIs for tasks like semantic analysis and content evaluation. In this app, Puter powers the résumé/job description comparison, enabling the scoring, keyword matching, and improvement suggestions you see in the results.
+
+---
+
 ## ✨ Key Features
 
 - 📎 Upload résumé + paste job description
